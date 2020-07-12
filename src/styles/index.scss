@@ -1,0 +1,273 @@
+$orange: #f68f16;
+$blue: #0116ed;
+
+@mixin MonB30 {
+  font-family: 'Montserrat';
+  font-size: 30px;
+  font-weight: 700;
+}
+@mixin MonB35 {
+  font-family: 'Montserrat';
+  font-size: 35px;
+  font-weight: 700;
+}
+@mixin MonM27 {
+  font-family: 'Montserrat';
+  font-size: 27px;
+  font-weight: 500;
+}
+@mixin RobL16 {
+  font-size: 16px;
+  font-weight: 300;
+}
+@mixin RobM16 {
+  font-size: 18px;
+  font-weight: 500;
+}
+@mixin fontS12 {
+  font-size: 12px;
+}
+@mixin fontS15 {
+  font-size: 15px;
+}
+@mixin fontS16 {
+  font-size: 16px;
+}
+@mixin fontS18 {
+  font-size: 18px;
+}
+@mixin fontS25 {
+  font-size: 25px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: black;
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+.bigContiner {
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+}
+.continer {
+  max-width: 1180px;
+  width: 100%;
+  padding: 0px 10px;
+  margin: 0 auto;
+}
+.d-f {
+  display: flex;
+}
+.f-between {
+  justify-content: space-between;
+}
+.f-al-center {
+  align-items: center;
+}
+.headerLineTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 45px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.09);
+  background-color: #5b6771;
+  z-index: 10;
+}
+.headerLineBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 92px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.09);
+  background-color: #ffffff;
+}
+.phoneBlock,.mailBlock {
+  display: flex;
+  align-items: center ;
+  color: white;
+  img {
+    width: auto;
+    margin-right: 5px;
+    flex-shrink: 0;
+  }
+  a {
+    @include fontS15();
+    color: white;
+  }
+}
+.mailBlock {
+  margin-left: 20px;
+}
+.sotialBlock {
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: #394753;
+  }
+  a + a {
+    margin-left: 6px;
+  }
+  a:hover {
+    background-color: #23272b;
+    transition: 0.2s;
+  }
+}
+.orange_button {
+  @include fontS16();
+  display: flex;
+  align-items: center;
+  padding: 0px 25px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+  background-color: $orange;
+  height: 50px;
+  color: white;
+  border: none;
+  font-weight: 400;
+  line-height: 28px;
+  text-transform: uppercase;
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(255, 123, 0);
+    transition: 0.5s;
+  }
+  &:active {
+    outline: none;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.linksBlock {
+  width: 100%;
+  margin-left: 20px;
+  justify-content: flex-end;
+  &__links {
+    @include fontS16();
+    max-width: 308px;
+    width: 100%;
+    a {
+      color: #262f37;
+    }
+  }
+  &__buttons {
+    flex-shrink: 0;
+    margin-left: 20px;
+    .burger {
+      display: none;
+    }
+    button + button {
+      margin-left: 20px;
+    }
+  }
+}
+.burger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 29px;
+  padding: 0px;
+  border: 1px solid #f68f16;
+  background-color: white;
+  border-radius: 3px;
+  cursor: pointer;
+  span {
+    position: relative;
+    width: 18px;
+    height: 2px;
+    background-color: #35414b;
+    border-radius: 3px;
+    transition: 0.2s;
+    &::after {
+      position: absolute;
+      content: '';
+      left: 0;
+      top: -5px;
+      width: 18px;
+      height: 2px;
+      background-color: #35414b;
+      border-radius: 3px;
+      transition: 0.2s;
+    }
+    &::before {
+      position: absolute;
+      content: '';
+      left: 0;
+      bottom: -5px;
+      width: 18px;
+      height: 2px;
+      background-color: #35414b;
+      border-radius: 3px;
+      transition: 0.2s;
+    }
+  }
+  &:active {
+    outline: none;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+.burger-open {
+  span {
+    background-color: transparent;
+    &::after {
+      transform: rotate(45deg);
+      top: 0;
+    }
+    &::before {
+      transform: rotate(-45deg);
+      top: 0;
+    }
+  }
+}
+
+@media all and (max-width: 830px) {
+  .headerLineBottom {
+    height: 60px;
+    .logoHeader {
+      height: 40px;
+    }
+  }
+  .linksBlock {
+    .linksBlock__links {
+      display: none;
+    }
+    .orange_button {
+      display: none;
+    }
+    .burger {
+      display: flex;
+    }
+  }
+  
+}
+@media all and (max-width: 500px) {
+  .headerLineTop {
+    .connectBlock {
+      width: 100%;
+      justify-content: space-between;
+      .mailBlock,.phoneBlock {
+        margin: 0;
+        img {
+          margin-right: 3px;
+        }
+      }
+    }
+    .sotialBlock {
+      display: none;
+    }
+  }
+}
