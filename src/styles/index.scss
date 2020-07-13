@@ -321,6 +321,76 @@ a {
   z-index: -1;
   object-fit: cover;
 }
+.block_section_header {
+  text-align: center;
+  h3 {
+    @include MonB35();
+    color: #262f37;
+    font-weight: 600;
+    margin-top: 126px;
+    margin-bottom: 5px;
+  }
+  p {
+    @include MonM27();
+    color: #35414b;
+    margin-top: 0px;
+    margin-bottom: 24px;
+  }
+}
+.jobsBlock {
+  .block_section_header {
+    text-align: center;
+    h3 {
+      margin-top: 126px;
+      margin-bottom: 5px;
+    }
+    p {
+      margin-top: 0px;
+    }
+  }
+}
+@media all and (max-width: 628px) {
+  .block_section_header {
+    h3 {
+      font-size: 27px;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+}
+.metka {
+  display: flex;
+  justify-content: center;
+  span {
+    position: relative;
+    display: block;
+    width: 43px;
+    height: 4px;
+    background-color: #0116ed;
+    border-radius: 3px;
+    &::after {
+      position: absolute;
+      content: '';
+      left: -15px;
+      display: inline-block;
+      width: 13px;
+      height: 4px;
+      background-color: #0116ed;
+      border-radius: 3px;
+    }
+    &::before {
+      position: absolute;
+      content: '';
+      right: -15px;
+      display: inline-block;
+      width: 13px;
+      height: 4px;
+      background-color: #0116ed;
+      border-radius: 3px;
+    }
+  }
+}
 @media all and (max-width: 852px) {
   .formBlock {
     padding-top: 100px;
@@ -363,6 +433,13 @@ a {
     }
     img {
       height: 500px;
+    }
+  }
+  .jobsBlock {
+    .block_section_header {
+      h3 {
+        margin-top: 35px;
+      }
     }
   }
 }

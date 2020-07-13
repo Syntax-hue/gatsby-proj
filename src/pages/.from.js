@@ -4,15 +4,15 @@ import '../styles/form.css'
 export default function Form() {
   const selectElem = useRef();
   const selectWrapElem = useRef();
-  const handleOpenMenu = () => {
+  /*const handleOpenMenu = () => {
     selectWrapElem.current.classList.toggle('selectWrap_open');
     const changeClass = (e) => {
       selectWrapElem.current.classList.toggle('selectWrap_open');
-      selectElem.current.blur();
+      //selectElem.current.blur();
       window.removeEventListener('click', changeClass, false)
     }
     window.addEventListener('click', changeClass, false)
-  }
+  }*/
 
   return (
     <form className="submit_from">
@@ -27,7 +27,7 @@ export default function Form() {
         <input placeholder="Telefon de contact"/>
       </div>
       <div ref={selectWrapElem} className="selectWrap" tabIndex="0">
-        <select onFocus={handleOpenMenu}
+        <select
                 ref={selectElem} 
                 defaultValue="Tip pașaport">
           <option>1</option>

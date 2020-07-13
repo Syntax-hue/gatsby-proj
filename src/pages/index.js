@@ -131,6 +131,26 @@ const IndexPage = () => {
         </div>
         <img className="fonImg" src={allImages['fon']} />
       </section>
+      <section className="jobsBlock">
+        <div className="continer">
+          <div className="block_section_header">
+            <h3>
+            Oferte și salarii minime garantate
+            </h3>
+            <p>
+              Colaborăm doar cu parteneri de încredere  din Europa
+            </p>
+            <div className="metka">
+              <span></span>
+            </div>
+          </div>
+          <div className="jobsBlock_list">
+            <div className="jobsBlock_list__item">
+
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }
