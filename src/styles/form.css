@@ -1,0 +1,167 @@
+.submit_from {
+  margin: 0px auto;
+  max-width: 542px;
+  max-height: 404px;
+  width: 100%;
+  height: 404px;
+  box-shadow: 0 7px 13px rgba(0, 0, 0, 0.08);
+  background-color: #f68f16;
+  padding-top: 35px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 40px;
+}
+.submit_from > div + div {
+  margin-top: 15px;
+}
+.submit_from h3 {
+  color: #ffffff;
+  font-family: 'Montserrat';
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 41px;
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 30px;
+}
+.submit_from input {
+  height: 50px;
+  width: 100%;
+  border: none;
+  color: #151616;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 30px;
+  padding-left: 15px;
+}
+.submit_from select {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  border: none;
+  color:#5b6771;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 30px;
+  padding-left: 15px;
+  background-color: white;
+  appearance: none;
+}
+.submit_from__button {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px !important;
+}
+.submit_from__button button {
+  background-color: #0116ed;
+}
+.submit_from__button button:hover {
+  background-color: #0140ed;
+}
+.selectWrap {
+  position: relative;
+}
+.selectWrap::after,.selectWrap::before {
+  position: absolute;
+  content: '';
+  background-color: black;
+  top: 50%;
+  right: 15px;
+  width: 14px;
+  height: 3px;
+  z-index: 1;
+}
+.selectWrap::after {
+  transform: rotate(45deg);
+  right: 23px;
+}
+.selectWrap::before {
+  transform: rotate(-45deg);
+}
+
+.submit_from select:focus {
+  outline: none;
+}
+.submit_from input:focus {
+  outline: none;
+}
+.submit_from input::-webkit-input-placeholder {color:#5b6771;}
+.submit_from input::-moz-placeholder          {color:#5b6771;}/* Firefox 19+ */
+.submit_from input:-moz-placeholder           {color:#5b6771;}/* Firefox 18- */
+.submit_from input:-ms-input-placeholder      {color:#5b6771;}
+
+.submit_from__userInfo {
+  display: flex;
+  justify-content: center;
+}
+.submit_from__userInfo > input + input {
+  margin-left: 15px;
+}
+@media all and (max-width: 510px) {
+  .submit_from {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 22px;
+    padding-bottom: 25px;
+    max-height: 300px;
+  }
+  .selectWrap::after,.selectWrap::before {
+    display: none;
+  }
+  .submit_from h3 {
+    margin-bottom: 25px;
+    font-size: 19.5px;
+    line-height: 15px;
+  }
+  .submit_from__button button {
+    font-size: 14px;
+    height: 40px;
+  }
+  .submit_from input,.submit_from select {
+    font-size: 12px;
+    height: 40px;
+  }
+  .submit_from > div + div {
+    margin-top: 12px;
+  }
+  .submit_from__userInfo > input + input {
+    margin-left: 10px;
+  }
+  .submit_from__button {
+    margin-top: 23px !important;
+  }
+}
+@media all and (max-width: 440px) {
+  .submit_from {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 22px;
+    padding-bottom: 25px;
+    max-height: 265px;
+  }
+  .selectWrap::after,.selectWrap::before {
+    display: none;
+  }
+  .submit_from h3 {
+    margin-bottom: 25px;
+    font-size: 14px;
+    line-height: 15px;
+  }
+  .submit_from__button button {
+    font-size: 9px;
+    height: 33px;
+  }
+  .submit_from input,.submit_from select {
+    font-size: 9px;
+    height: 33px;
+  }
+  .submit_from > div + div {
+    margin-top: 10px;
+  }
+  .submit_from__userInfo > input + input {
+    margin-left: 10px;
+  }
+  .submit_from__button {
+    margin-top: 23px !important;
+  }
+}

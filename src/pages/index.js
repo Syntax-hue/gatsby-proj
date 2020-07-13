@@ -1,6 +1,7 @@
 import React from "react"
 import '../styles/index.scss'
 import {useStaticQuery, graphql} from 'gatsby'
+import Form from "./.from"
 
 
 
@@ -93,6 +94,18 @@ const IndexPage = () => {
         </div>
       </div>
     </header>
+    <section className="formBlock">
+      <div className="continer">
+        <h1>
+          Aveți nevoie de un loc de&nbsp;muncă&nbsp;legal&nbsp;în&nbsp;Europa?
+        </h1>
+        <h2>
+        Plecările legale în Europa sînt în baza&nbsp;Pașaportului&nbsp;European
+        </h2>
+        <Form />
+      </div>
+      <img className="fonImg" src={allImages['fon']}/>
+    </section>
   </div>
   )
 } 
