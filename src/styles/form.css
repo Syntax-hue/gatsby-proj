@@ -70,6 +70,7 @@
   width: 14px;
   height: 3px;
   z-index: 1;
+  transition: 0.3s;
 }
 .selectWrap::after {
   transform: rotate(45deg);
@@ -78,7 +79,15 @@
 .selectWrap::before {
   transform: rotate(-45deg);
 }
-
+.selectWrap_open::after {
+  transform: rotate(-45deg);
+}
+.selectWrap_open::before {
+  transform: rotate(45deg);
+}
+.submit_from select,.submit_from select option{
+  cursor: pointer;
+}
 .submit_from select:focus {
   outline: none;
 }
