@@ -4,16 +4,18 @@ import '../styles/form.css'
 export default function Form() {
   const selectElem = useRef();
   const selectWrapElem = useRef();
-  /*const handleOpenMenu = () => {
-    selectWrapElem.current.classList.toggle('selectWrap_open');
+  //window.addEventListener('click', (e) => console.log(e.target), false);
+  const handleOpenMenu = (event) => {
+    event.stopPropagation()
     const changeClass = (e) => {
       selectWrapElem.current.classList.toggle('selectWrap_open');
-      //selectElem.current.blur();
-      window.removeEventListener('click', changeClass, false)
+      selectElem.current.blur();
+      document.removeEventListener('click', changeClass, false)
     }
-    window.addEventListener('click', changeClass, false)
-  }*/
-
+    document.addEventListener('click', changeClass, false)
+    selectWrapElem.current.classList.toggle('selectWrap_open');
+  }
+  console.log("RERENDER");
   return (
     <form className="submit_from">
       <h3>
@@ -26,8 +28,11 @@ export default function Form() {
       <div>
         <input placeholder="Telefon de contact"/>
       </div>
-      <div ref={selectWrapElem} className="selectWrap" tabIndex="0">
-        <select
+      <div
+           ref={selectWrapElem} 
+           className="selectWrap" 
+           tabIndex="0">
+        <select onFocus={handleOpenMenu}
                 ref={selectElem} 
                 defaultValue="Tip pașaport">
           <option>1</option>
