@@ -128,7 +128,7 @@ a {
     margin-left: 6px;
   }
   a:hover {
-    background-color: #23272b;
+    background-color: #3d4d5a;
     transition: 0.2s;
   }
 }
@@ -532,6 +532,7 @@ a {
     height: 4px;
     background-color: #0116ed;
     border-radius: 3px;
+    margin-left: -2px;
     &::after {
       position: absolute;
       content: '';
@@ -566,13 +567,14 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0px 10px;
     padding-bottom: 60px;
     &::before {
       position: absolute;
       content: '';
       left: 0;
       bottom: 0;
-      height: 2px;
+      height: 1px;
       width: 100%;
       background-color: #32414d;
     }
@@ -598,6 +600,30 @@ footer {
     }
   }
 }
+.thankYouPageFooter {
+  margin-top: 0px;
+}
+.thankYouPageContacts {
+  margin-bottom: 90px;
+  .contacts__list__item {
+    .contacts__list__item__logo {
+      border-color: white;
+    }
+    .contacts__list__item_data {
+      color: white;
+    }
+  }
+}
+.thankYouPageFormBlock {
+  max-height: none !important;
+  .fonImg {
+    height: 100% !important;
+  }
+  .contacts__list__item__logo img {
+    height: max-content !important;
+  }
+}
+
 @media all and (max-width: 1023px) {
   .despre {
     .continer {
@@ -795,12 +821,12 @@ footer {
   }
 }
 @media all and (max-width: 400px) {
+  footer {
+    margin-top: 55px;
+  }
   .footer_info {
     .footer_info_top {
       padding-bottom: 90px;
-      p {
-
-      }
     }
     .footer_info_bottom {
       padding: 7px 10px;
