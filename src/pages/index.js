@@ -186,6 +186,28 @@ const IndexPage = () => {
           </div>
         </div>
       </section>
+      <section className="angajeaza">
+        <div className="continer angajeaza_info">
+          <div>
+            {(document.documentElement.clientWidth < 500) ? 
+            <img className="fonImg" src={allImages['fon2']} />
+            :
+            <img className="fonImg" src={allImages['fon2-1']} />
+            }
+          </div>
+          <h3>
+            Angajează-te în Germania
+            cu Legis Recruitment
+            și&nbsp;vei primi garantat 
+            impozitele înapoi!
+          </h3>
+          <div>
+            <button className="orange_button">
+              RETURNARE IMPOZITE
+            </button>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }

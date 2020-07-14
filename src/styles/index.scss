@@ -396,6 +396,40 @@ a {
     }
   }
 }
+.angajeaza {
+  margin: 100px 0px;
+}
+.angajeaza_info {
+  position: relative;
+  height: 338px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 15px;
+  img {
+    left: 10px;
+  }
+  h3 {
+    color: #ffffff;
+    font-family: 'Montserrat';
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 46px;
+  }
+  &::after {
+    position: absolute;
+    content: '';
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 10px;
+    background-color: white;
+    z-index: 1;
+  }
+}
 @media all and (max-width: 628px) {
   .block_section_header {
     h3 {
@@ -499,6 +533,17 @@ a {
   }
 }
 @media all and (max-width: 510px) {
+  .angajeaza_info {
+    h3 {
+      font-size: 25px;
+      margin-top: -20px;
+      margin-bottom: 10px;
+      line-height: 37px;
+    }
+    button {
+      margin-top: 33px;
+    }
+  }
   .formBlock {
     padding-top: 100px;
     h1 {
