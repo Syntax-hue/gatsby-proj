@@ -87,6 +87,13 @@
 }
 .selectWrap_viewBlock {
   position: absolute;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+  padding-left: 15px;
   top: 0;
   left: 0;
   width: 100%;
@@ -160,7 +167,7 @@
     font-size: 14px;
     height: 40px;
   }
-  .submit_from input,.submit_from .selectWrap {
+  .submit_from input,.submit_from .selectWrap, {
     font-size: 12px;
     height: 40px;
   }
@@ -197,6 +204,9 @@
   .submit_from input,.submit_from .selectWrap {
     font-size: 9px;
     height: 33px;
+  }
+  .selectWrap_viewBlock {
+    font-size: 9px;
   }
   .submit_from > div + div {
     margin-top: 10px;

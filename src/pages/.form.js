@@ -14,17 +14,20 @@ export default function Form() {
       selectElem.current.classList.toggle('select_list-open');
     }
   }
-  const handleOpenMenu = (event) => {
+  const handleOpenMenu = () => {
     selectElem.current.classList.toggle("select_list-open");
     selectWrapElem.current.classList.toggle("selectWrap_open");
     window.addEventListener('click', _handleClose, true);
   }
-  const handleClose = (e) => {
+  const handleCloseOption = (e) => {
     window.removeEventListener('click', _handleClose, true)
     setTimeout(() => {
       selectWrapElem.current.classList.toggle("selectWrap_open");
       selectElem.current.classList.toggle('select_list-open');
     },150);
+  }
+  const handleClickSelect = (e) => {
+    viewFon.current.innerText = e.target.value
   }
   return (
     <form className="submit_from">
@@ -44,17 +47,18 @@ export default function Form() {
       >
         <div ref={viewFon}
              className="selectWrap_viewBlock" 
-             onClick={handleOpenMenu}>
+             onClick={handleOpenMenu}
+        >
+          Tip pașaport
         </div>
         <select className="select_list"
                 ref={selectElem}
-                onFocus={handleClose}
-                defaultValue="Tip pașaport"
+                onFocus={handleCloseOption}
+                onChange={handleClickSelect}
                 size={2}
         >
           <option>1</option>
           <option>2</option>
-          <option style={{display: 'none'}} value="Tip pașaport">Tip pașaport</option>
         </select>
       </div>
       <div className="submit_from__button">
