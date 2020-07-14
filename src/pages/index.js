@@ -208,6 +208,42 @@ const IndexPage = () => {
           </div>
         </div>
       </section>
+      <section className="despre">
+        <div className="continer">
+          <img className="despre_img" src={allImages['fon3']}/>
+          <div className="despre_info">
+            <h3>
+              Despre noi
+            </h3>
+            <p>
+              Legis Recruitment este o companie de recrutare, care oferă locuri de muncă în Uniunea Europeană. Toate ofertele sunt sigure, au fost verificate personal de managerii companiei. 
+            </p>
+            <p>
+              AVANTAJELE NOASTRE: 
+            </p>
+            <div className="despre_info__list">
+              <div className="despre_info__list_item">
+                <span>
+                  <img src={allImages['circle_gal']}/>
+                </span>
+                Locul de muncă este direct de la Angajatorul din Germania
+              </div>
+              <div className="despre_info__list_item">
+                <span>
+                  <img src={allImages['circle_gal']}/>
+                </span>
+                Candidatul cunoaște salariul înainte de plecare (Abrechnung)
+              </div>
+              <div className="despre_info__list_item">
+                <span>
+                  <img src={allImages['circle_gal']}/>
+                </span>
+                Disponibilitate non-stop și intervenția obligatorie în soluționarea problemelor.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }
