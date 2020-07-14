@@ -292,7 +292,36 @@ const IndexPage = () => {
 
         </div>
         <div className="footer_info">
-            
+          <div className="continer footer_info_top">
+            <div className="footer_logo">
+              <img src={allImages['footer_logo']}/>
+            </div>
+            <p>
+              Legis Recruitment este o companie de recrutare  care oferă locuri de muncă în Europa.
+            </p>
+          </div>
+          <div className="continer footer_info_bottom">
+            <div className="d-f sotialBlock">
+              <a href="#" className="sotialBlock__item">
+                <img src={allImages['q4']} alt="" />
+              </a>
+              <a href="#" className="sotialBlock__item">
+                <img src={allImages['q3']} alt="" />
+              </a>
+              <a href="#" className="sotialBlock__item">
+                <img src={allImages['q5']} alt="" />
+              </a>
+              <a href="#" className="sotialBlock__item">
+                <img src={allImages['q1']} alt="" />
+              </a>
+              <a href="#" className="sotialBlock__item">
+                <img src={allImages['q6']} alt="" />
+              </a>
+            </div>
+            <div className="footer_info_bottom_text">
+              © 2020 Legis-R, All rights reserved.
+            </div>
+          </div>
         </div>
       </footer>
     </div>
