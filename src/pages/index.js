@@ -1,7 +1,7 @@
 import React, { useRef } from "react"
 import '../styles/index.scss'
 import { useStaticQuery, graphql } from 'gatsby'
-import Form from "./.from"
+import Form from "./.form"
 
 
 

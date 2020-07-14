@@ -34,7 +34,7 @@
   line-height: 30px;
   padding-left: 15px;
 }
-.submit_from select {
+.submit_from .selectWrap {
   position: relative;
   height: 50px;
   width: 100%;
@@ -61,6 +61,39 @@
 .selectWrap {
   position: relative;
 }
+.select_list {
+  position: absolute;
+  display: none;
+  left: 0;
+  width: 100%;
+  bottom: 0px;
+  transform: translateY(100%);
+  overflow: hidden;
+}
+.select_list-open {
+  display: block;
+}
+.select_list option {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+}
+.select_list-open option::selection {
+  background: transparent;
+}
+.select_list:focus {
+  outline: none;
+}
+.selectWrap_viewBlock {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 9;
+}
 .selectWrap::after,.selectWrap::before {
   position: absolute;
   content: '';
@@ -71,6 +104,7 @@
   height: 3px;
   z-index: 1;
   transition: 0.3s;
+  z-index: 10;
 }
 .selectWrap::after {
   transform: rotate(45deg);
@@ -85,10 +119,10 @@
 .selectWrap_open::before {
   transform: rotate(45deg);
 }
-.submit_from select,.submit_from select option{
+.submit_from .selectWrap,.submit_from .selectWrap option{
   cursor: pointer;
 }
-.submit_from select:focus {
+.submit_from .selectWrap:focus {
   outline: none;
 }
 .submit_from input:focus {
@@ -126,7 +160,7 @@
     font-size: 14px;
     height: 40px;
   }
-  .submit_from input,.submit_from select {
+  .submit_from input,.submit_from .selectWrap {
     font-size: 12px;
     height: 40px;
   }
@@ -160,7 +194,7 @@
     font-size: 9px;
     height: 33px;
   }
-  .submit_from input,.submit_from select {
+  .submit_from input,.submit_from .selectWrap {
     font-size: 9px;
     height: 33px;
   }
