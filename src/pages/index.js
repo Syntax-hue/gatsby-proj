@@ -146,7 +146,42 @@ const IndexPage = () => {
           </div>
           <div className="jobsBlock_list">
             <div className="jobsBlock_list__item">
-
+              <img src={allImages['Fabrica_de_mezeluri']}/>
+              <div className="jobsBlock_list__item__info">
+                <h5>
+                  Fabrica de mezeluri
+                </h5>
+                <div className="jobsBlock_list__item__desc">
+                  Lucrător secția producere și ambalare <br/>
+                  Salariu: <span> de la 1624 EUR brut/lună </span> <br/>
+                  Bărbați / Femei/Cupluri <br/>
+                  Vârsta: 20-50 ani <br/>
+                  Orele de muncă: 160-190 ore/lună <br/>
+                  Cazare și transport la serviciu oferit de angajator <br/>
+                </div>
+                <button className="orange_button">
+                  TRIMITE SOLICITARE
+                </button>
+              </div>
+            </div>
+            <div className="jobsBlock_list__item">
+              <img src={allImages['Fabrica_de_mezeluri']}/>
+              <div className="jobsBlock_list__item__info">
+                <h5>
+                  Fabrica de mezeluri
+                </h5>
+                <div className="jobsBlock_list__item__desc">
+                  Lucrător secția producere și ambalare <br/>
+                  Salariu: <span> de la 1624 EUR brut/lună </span> <br/>
+                  Bărbați / Femei/Cupluri <br/>
+                  Vârsta: 20-50 ani <br/>
+                  Orele de muncă: 160-190 ore/lună <br/>
+                  Cazare și transport la serviciu oferit de angajator <br/>
+                </div>
+                <button className="orange_button">
+                  TRIMITE SOLICITARE
+                </button>
+              </div>
             </div>
           </div>
         </div>
