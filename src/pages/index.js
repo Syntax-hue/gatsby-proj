@@ -244,6 +244,57 @@ const IndexPage = () => {
           </div>
         </div>
       </section>
+      <section className="contacts">
+        <div className="continer">
+          <div className="block_section_header">
+            <h3>
+            Contactele noastre
+            </h3>
+            <p>
+            Pentru mai multe informaţii
+            </p>
+            <div className="metka">
+              <span></span>
+            </div>
+          </div>
+          <div className="contacts__list">
+            <div className="contacts__list__item">
+              <div className="contacts__list__item__logo">
+                <img src={[allImages['phone_1']]}/>
+              </div>
+              <div className="contacts__list__item_data">
+                APELAȚI-NE <br/>
+                +373 22 211 808
+              </div>
+            </div>
+            <div className="contacts__list__item">
+              <div className="contacts__list__item__logo">
+                <img style={{marginLeft: 1}} src={[allImages['mark_1']]}/>
+              </div>
+              <div className="contacts__list__item_data">
+                Chișinău, <br/>
+                str. Vasile Alecsandri 129, of.16
+              </div>
+            </div>
+            <div className="contacts__list__item">
+              <div className="contacts__list__item__logo">
+                <img style={{marginLeft: 1.5}} src={[allImages['mail_1']]}/>
+              </div>
+              <div className="contacts__list__item_data">
+                hr.legis@gmail.com
+              </div>
+            </div> 
+          </div>
+        </div>
+      </section>
+      <footer>
+        <div className="footer_map">
+
+        </div>
+        <div className="footer_info">
+            
+        </div>
+      </footer>
     </div>
   )
 }
