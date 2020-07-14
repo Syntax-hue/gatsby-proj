@@ -604,6 +604,7 @@ footer {
   margin-top: 0px;
 }
 .thankYouPageContacts {
+  margin-top: 100px;
   margin-bottom: 90px;
   .contacts__list__item {
     .contacts__list__item__logo {
@@ -616,11 +617,59 @@ footer {
 }
 .thankYouPageFormBlock {
   max-height: none !important;
+  h1 {
+    font-size: 35px;
+    text-transform: none !important;
+  }
+  .metka {
+    span {
+      margin-top: 30px;
+      background-color: white;
+      &::after {
+        background-color: white;
+      }
+      &::before {
+        background-color: white;
+      }
+    }
+  }
   .fonImg {
     height: 100% !important;
   }
   .contacts__list__item__logo img {
     height: max-content !important;
+  }
+}
+@media all and (max-width: 931px) {
+  .thankYouPageFormBlock {
+    h1 {
+      font-size: 25px !important;
+      line-height: 30px;
+    }
+  }
+}
+@media all and (max-width: 539px) {
+  .thankYouPageFormBlock {
+    h1 {
+      font-size: 23px !important;
+      line-height: 30px;
+    }
+  }
+}
+@media all and (max-width: 486px) {
+  .thankYouPageFormBlock {
+    h1 {
+      font-size: 20px !important;
+      line-height: 30px;
+    }
+  }
+}
+@media all and (max-width: 486px) {
+  .thankYouPageFormBlock {
+    h1 {
+      font-size: 18px !important;
+      line-height: 30px;
+    }
   }
 }
 

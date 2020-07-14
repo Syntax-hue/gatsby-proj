@@ -29,10 +29,15 @@ export default function ThankYou() {
       <Header/>
       <section className="formBlock thankYouPageFormBlock">
         <div className="continer">
-          <h2>
-            Mulțumim că ați ales compania Legis Recruitment, un 
-            consultant va reveni pe parcursul zilei cu un apel telefonic.
-          </h2>
+          <h1>
+            Mulțumim că ați ales compania 
+            Legis Recruitment, un 
+            consultant&nbsp;va reveni pe parcursul 
+            zilei&nbsp;cu&nbsp;un&nbsp;apel&nbsp;telefonic. 
+          </h1>
+          <div className="metka">
+            <span></span>
+          </div>
           <div className="contacts__list thankYouPageContacts">
             <div className="contacts__list__item">
               <div className="contacts__list__item__logo">

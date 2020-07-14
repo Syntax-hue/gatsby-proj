@@ -5,6 +5,8 @@ import Form from "./.form"
 import Header from "../components/header"
 import Footer from "../components/footer"
 
+
+
 const IndexPage = () => {
   const data = useStaticQuery(
     graphql`
