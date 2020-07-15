@@ -7,11 +7,28 @@ require('dotenv').config({
   )
 })
 
+console.log('strapi', process.env.GATSBY_SITE_STRAPI)
 module.exports = {
   siteMetadata: {
     siteUrl: process.env.GATSBY_SITE_URL
   },
   plugins: [
+    {
+      resolve: `gatsby-source-strapi`,
+      options: {
+        apiURL: process.env.GATSBY_SITE_STRAPI,
+        queryLimit: 1000, // Default to 100
+        //contentTypes: [`Jobs`],
+        singleTypes: [`jobs`],
+        //If using single types place them in this array.
+        /*singleTypes: [`home-page`, `contact`],
+        // Possibility to login with a strapi user, when content types are not publically available (optional).
+        loginData: {
+          identifier: "",
+          password: "",
+        },*/
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

@@ -23,6 +23,7 @@
     "gatsby-plugin-robots-txt": "^1.5.1",
     "gatsby-plugin-sass": "^2.3.12",
     "gatsby-plugin-sitemap": "^2.4.11",
+    "gatsby-source-strapi": "^0.0.12",
     "node-sass": "^4.14.1",
     "path": "^0.12.7",
     "prettier": "2.0.5"

@@ -32,9 +32,37 @@ const IndexPage = () => {
             }
           }
         }
+        allStrapiJobs {
+          edges {
+            node {
+              id
+              title
+              name_job
+              salariu_job
+              gender
+              varsta
+              orele_de_munca
+              termeni
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 1980, quality: 100) {
+                    aspectRatio
+                    src
+                    srcSet
+                    sizes
+                    base64
+                    srcWebp
+                    srcSetWebp
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     `
   )
+  console.log(data.allStrapiJobs.edges);
   const allImages = {};
   data.allFile.edges.map(({ node }) => {
     allImages[node.name] = node.publicURL
@@ -43,7 +71,27 @@ const IndexPage = () => {
   data.allFile.edges.map(({ node }) => {
     allImagesFluid[node.name] = node.childImageSharp && node.childImageSharp.fluid
   })
-  console.log(allImagesFluid)
+  const jobsList = data.allStrapiJobs.edges.map(({node}) => (
+    <div className="jobsBlock_list__item" key={node.id}>
+      <Img className="jobsBlock_list__item_img" fluid={node.image.childImageSharp.fluid} alt="work fon"/>
+      <div className="jobsBlock_list__item__info">
+        <h5>
+          {node.title}
+        </h5>
+        <div className="jobsBlock_list__item__desc">
+          {node.name_job && <div>{node.name_job}</div>}
+          {node.salariu_job && <div>Salariu:<span>{node.salariu_job}</span></div>}
+          {node.gender && <div>{node.gender}</div>}
+          {node.varsta && <div>Vârsta:{node.varsta}</div>}
+          {node.orele_de_munca && <div>Orele de muncă:{node.orele_de_munca}</div>}
+          {node.termeni && <div>{node.termeni}</div>}
+        </div>
+        <button className="orange_button">
+          TRIMITE SOLICITARE
+        </button>
+      </div>
+    </div>
+  ));
   return (
     <div className="bigContiner">
       <Helmet>
@@ -96,25 +144,7 @@ const IndexPage = () => {
                 </button>
               </div>
             </div>
-            <div className="jobsBlock_list__item">
-              <Img className="jobsBlock_list__item_img" fluid={allImagesFluid['Fabrica_de_mezeluri']} alt="work fon"/>
-              <div className="jobsBlock_list__item__info">
-                <h5>
-                  Fabrica de mezeluri
-                </h5>
-                <div className="jobsBlock_list__item__desc">
-                  Lucrător secția producere și ambalare <br/>
-                  Salariu: <span> de la 1624 EUR brut/lună </span> <br/>
-                  Bărbați / Femei/Cupluri <br/>
-                  Vârsta: 20-50 ani <br/>
-                  Orele de muncă: 160-190 ore/lună <br/>
-                  Cazare și transport la serviciu oferit de angajator <br/>
-                </div>
-                <button className="orange_button">
-                  TRIMITE SOLICITARE
-                </button>
-              </div>
-            </div>
+            {jobsList}
           </div>
         </div>
       </section>
