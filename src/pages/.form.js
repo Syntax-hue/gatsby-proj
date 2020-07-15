@@ -6,6 +6,9 @@ export default function Form() {
   const selectElem = useRef();
   const selectWrapElem = useRef();
   const viewFon = useRef();
+  const nameField = useRef();
+  const prenameField = useRef();
+  const telefonField = useRef();
   const _handleClose = (e) => {
     window.removeEventListener('click', _handleClose, true)
     event.stopPropagation()
@@ -29,17 +32,35 @@ export default function Form() {
   const handleClickSelect = (e) => {
     viewFon.current.innerText = e.target.value
   }
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    console.log(process.env.GATSBY_SITE_STRAPI+'/forms');
+    fetch(process.env.GATSBY_SITE_STRAPI+'/forms', {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: nameField.current.value,
+        prenume: prenameField.current.value,
+        telefon: telefonField.current.value,
+        tip_pasaport: viewFon.current.innerText === 'Tip pașaport' ? 
+          'none' : viewFon.current.innerText
+      })
+    })
+  }
   return (
-    <form className="submit_from">
+    <form className="submit_from" onSubmit={handleSubmit}>
       <h3>
         COMPLETEAZĂ FORMULARUL
       </h3>
       <div className="submit_from__userInfo">
-        <input placeholder="name"/>
-        <input placeholder="Prenume"/>
+        <input ref={nameField} placeholder="Nume" required/>
+        <input ref={prenameField} placeholder="Prenume" required/>
       </div>
       <div>
-        <input placeholder="Telefon de contact"/>
+        <input ref={telefonField} placeholder="Telefon de contact" required/>
       </div>
       <div
            ref={selectWrapElem} 
@@ -57,12 +78,12 @@ export default function Form() {
                 onChange={handleClickSelect}
                 size={2}
         >
-          <option>1</option>
-          <option>2</option>
+          <option>Moldova</option>
+          <option>România</option>
         </select>
       </div>
       <div className="submit_from__button">
-        <button type="button" className="orange_button">
+        <button className="orange_button">
           OBȚINE CONSULTAȚIE
         </button>
       </div>
