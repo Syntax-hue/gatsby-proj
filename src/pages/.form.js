@@ -2,6 +2,11 @@ import React, { useRef } from 'react'
 import {navigate} from '@reach/router'
 import '../styles/form.css'
 
+const encode = (data) => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+}
 
 export default function Form() {
   const selectElem = useRef();
@@ -36,23 +41,29 @@ export default function Form() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    const data = {
+      name: nameField.current.value,
+      prenume: prenameField.current.value,
+      telefon: telefonField.current.value,
+      tip_pasaport: viewFon.current.innerText === 'Tip pașaport' ? 
+        'none' : viewFon.current.innerText
+    }
     await fetch(process.env.GATSBY_SITE_STRAPI+'/forms', {
       method: "POST",
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({
-        name: nameField.current.value,
-        prenume: prenameField.current.value,
-        telefon: telefonField.current.value,
-        tip_pasaport: viewFon.current.innerText === 'Tip pașaport' ? 
-          'none' : viewFon.current.innerText
-      })
+      body: JSON.stringify(data)
+    })
+    await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...data })
     })
     navigate('/thankYou');
   }
   return (
-    <form className="submit_from" onSubmit={handleSubmit}>
+    <form name="contact" data-netlify="true" netlify className="submit_from" onSubmit={handleSubmit}>
       <h3>
         COMPLETEAZĂ FORMULARUL
       </h3>
