@@ -3,6 +3,7 @@ import Header from '../components/header'
 import Footer from '../components/footer'
 import { useStaticQuery, graphql } from 'gatsby'
 import '../styles/index.scss'
+import { Helmet } from 'react-helmet'
 
 export default function ThankYou() {
   const data = useStaticQuery(
@@ -26,6 +27,10 @@ export default function ThankYou() {
 
   return (
     <div className="bigContiner">
+      <Helmet>
+        <title>Thank You</title>
+        <meta name="description" content="Thank You"/>
+      </Helmet>
       <Header/>
       <section className="formBlock thankYouPageFormBlock">
         <div className="continer">

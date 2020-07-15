@@ -4,8 +4,10 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Form from "./.form"
 import Header from "../components/header"
 import Footer from "../components/footer"
+import {Helmet} from "react-helmet";
+import Img from 'gatsby-image'
 
-
+var globalThis = globalThis | {};
 
 const IndexPage = () => {
   const data = useStaticQuery(
@@ -16,6 +18,17 @@ const IndexPage = () => {
             node {
               publicURL
               name
+              childImageSharp {
+                fluid(maxWidth: 1980, quality: 100) {
+                  aspectRatio
+                  src
+                  srcSet
+                  sizes
+                  base64
+                  srcWebp
+                  srcSetWebp
+                }
+              }
             }
           }
         }
@@ -26,9 +39,17 @@ const IndexPage = () => {
   data.allFile.edges.map(({ node }) => {
     allImages[node.name] = node.publicURL
   })
-
+  const allImagesFluid = {};
+  data.allFile.edges.map(({ node }) => {
+    allImagesFluid[node.name] = node.childImageSharp && node.childImageSharp.fluid
+  })
+  console.log(allImagesFluid)
   return (
     <div className="bigContiner">
+      <Helmet>
+        <title>Plecările legale în Europa sînt în baza Pașaportului European</title>
+        <meta name="description" content="Muncă legal în Europa. Plecările legale în Europa"/>
+      </Helmet>
       <Header />
       <section className="formBlock">
         <div className="continer">
@@ -40,7 +61,7 @@ const IndexPage = () => {
           </h2>
           <Form />
         </div>
-        <img className="fonImg" src={allImages['fon']} />
+        <Img className="fonImg" fluid={allImagesFluid['fon']} alt="work"/>
       </section>
       <section className="jobsBlock">
         <div className="continer">
@@ -57,7 +78,7 @@ const IndexPage = () => {
           </div>
           <div className="jobsBlock_list">
             <div className="jobsBlock_list__item">
-              <img src={allImages['Fabrica_de_mezeluri']}/>
+              <Img className="jobsBlock_list__item_img" fluid={allImagesFluid['Fabrica_de_mezeluri']} alt="work fon"/>
               <div className="jobsBlock_list__item__info">
                 <h5>
                   Fabrica de mezeluri
@@ -76,7 +97,7 @@ const IndexPage = () => {
               </div>
             </div>
             <div className="jobsBlock_list__item">
-              <img src={allImages['Fabrica_de_mezeluri']}/>
+              <Img className="jobsBlock_list__item_img" fluid={allImagesFluid['Fabrica_de_mezeluri']} alt="work fon"/>
               <div className="jobsBlock_list__item__info">
                 <h5>
                   Fabrica de mezeluri
@@ -99,11 +120,11 @@ const IndexPage = () => {
       </section>
       <section className="angajeaza">
         <div className="continer angajeaza_info">
-          <div>
-            {(document.documentElement.clientWidth < 500) ? 
-            <img className="fonImg" src={allImages['fon2']} />
+          <div style={{width: '100%'}}>
+            {(globalThis.window ? globalThis.window.innerWidth < 500 ? true : false : true) ? 
+            <Img className="fonImg" fluid={allImagesFluid['fon2']} />
             :
-            <img className="fonImg" src={allImages['fon2-1']} />
+            <Img className="fonImg" fluid={allImagesFluid['fon2-1']} />
             }
           </div>
           <h3>
@@ -121,7 +142,7 @@ const IndexPage = () => {
       </section>
       <section className="despre">
         <div className="continer">
-          <img className="despre_img" src={allImages['fon3']}/>
+          <Img className="despre_img" fluid={allImagesFluid['fon3']} alt="handshake"/>
           <div className="despre_info">
             <h3>
               Despre noi
@@ -135,19 +156,19 @@ const IndexPage = () => {
             <div className="despre_info__list">
               <div className="despre_info__list_item">
                 <span>
-                  <img src={allImages['circle_gal']}/>
+                  <img src={allImages['circle_gal']} alt=""/>
                 </span>
                 Locul de muncă este direct de la Angajatorul din Germania
               </div>
               <div className="despre_info__list_item">
                 <span>
-                  <img src={allImages['circle_gal']}/>
+                  <img src={allImages['circle_gal']} alt=""/>
                 </span>
                 Candidatul cunoaște salariul înainte de plecare (Abrechnung)
               </div>
               <div className="despre_info__list_item">
                 <span>
-                  <img src={allImages['circle_gal']}/>
+                  <img src={allImages['circle_gal']} alt=""/>
                 </span>
                 Disponibilitate non-stop și intervenția obligatorie în soluționarea problemelor.
               </div>
@@ -171,7 +192,7 @@ const IndexPage = () => {
           <div className="contacts__list">
             <div className="contacts__list__item">
               <div className="contacts__list__item__logo">
-                <img src={[allImages['phone_1']]}/>
+                <img src={[allImages['phone_1']]} alt="phone"/>
               </div>
               <div className="contacts__list__item_data">
                 APELAȚI-NE <br/>
@@ -180,7 +201,7 @@ const IndexPage = () => {
             </div>
             <div className="contacts__list__item">
               <div className="contacts__list__item__logo">
-                <img style={{marginLeft: 1}} src={[allImages['mark_1']]}/>
+                <img style={{marginLeft: 1}} src={[allImages['mark_1']]} alt="mark"/>
               </div>
               <div className="contacts__list__item_data">
                 Chișinău, <br/>
@@ -189,7 +210,7 @@ const IndexPage = () => {
             </div>
             <div className="contacts__list__item">
               <div className="contacts__list__item__logo">
-                <img style={{marginLeft: 1.5}} src={[allImages['mail_1']]}/>
+                <img style={{marginLeft: 1.5}} src={[allImages['mail_1']]} alt="mail"/>
               </div>
               <div className="contacts__list__item_data">
                 hr.legis@gmail.com

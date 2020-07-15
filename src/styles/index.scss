@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap');
+
 $orange: #f68f16;
 $blue: #0116ed;
 
@@ -315,7 +317,7 @@ a {
 }
 .fonImg {
   top: 0;
-  position: absolute;
+  position: absolute !important;
   height: 100%;
   width: 100%;
   z-index: -1;
@@ -356,6 +358,10 @@ a {
       width: 100%;
       box-shadow: 0 7px 13px rgba(0, 0, 0, 0.08);
       background-color: #ffffff;
+      .jobsBlock_list__item_img {
+        max-width: 350px;
+        width: 100%;
+      }
       + .jobsBlock_list__item {
         margin-top: 40px;
         justify-content: space-between;
@@ -441,7 +447,8 @@ a {
   }
   .despre_img {
     box-shadow: 0 7px 20px rgba(0, 0, 0, 0.23);
-    height: 456px;
+    //height: 456px !important;
+    width: 100%;
   }
   .despre_info {
     margin-left: 33px;
@@ -819,7 +826,7 @@ footer {
       line-height: 25px;
     }
     img {
-      height: 500px;
+      height: 500px !important;
     }
   }
   .jobsBlock {
@@ -860,7 +867,7 @@ footer {
       line-height: 20px;
     }
     img {
-      height: 325px;
+      height: 325px !important;
     }
   }
 }

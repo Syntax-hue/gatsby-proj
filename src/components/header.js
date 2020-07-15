@@ -85,7 +85,7 @@ export default function Header() {
       </div>
       <div className="headerLineBottom">
         <div className="d-f f-between continer">
-          <img className="logoHeader" src={allImages['Legis_R']} />
+          <img className="logoHeader" src={allImages['Legis_R']} alt="logoHeader"/>
           <div className="d-f f-al-center linksBlock">
             <div className="d-f f-between linksBlock__links">
               <a href="#">
