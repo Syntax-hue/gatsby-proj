@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import {navigate} from '@reach/router'
 import '../styles/form.css'
 
 
@@ -33,10 +34,9 @@ export default function Form() {
     viewFon.current.innerText = e.target.value
   }
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    console.log(process.env.GATSBY_SITE_STRAPI+'/forms');
-    fetch(process.env.GATSBY_SITE_STRAPI+'/forms', {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    await fetch(process.env.GATSBY_SITE_STRAPI+'/forms', {
       method: "POST",
       headers: {
         'Content-Type': 'application/json'
@@ -49,6 +49,7 @@ export default function Form() {
           'none' : viewFon.current.innerText
       })
     })
+    navigate('/thankYou');
   }
   return (
     <form className="submit_from" onSubmit={handleSubmit}>

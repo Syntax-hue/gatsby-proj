@@ -62,7 +62,6 @@ const IndexPage = () => {
       }
     `
   )
-  console.log(data.allStrapiJobs.edges);
   const allImages = {};
   data.allFile.edges.map(({ node }) => {
     allImages[node.name] = node.publicURL
