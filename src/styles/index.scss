@@ -371,6 +371,7 @@ a {
       .jobsBlock_list__item__info {
         margin-left: 28px;
         padding-right: 8px;
+        width: 96%;
         h5 {
           color: #0116ed;
           font-family: 'Montserrat';
@@ -383,6 +384,7 @@ a {
         }
         .jobsBlock_list__item__desc {
           /* Style for "Bărbați /" */
+          width: 100%;
           color: #35414b;
           font-family: 'Roboto';
           font-size: 18px;
@@ -517,6 +519,12 @@ a {
       font-weight: 400;
       line-height: 35px;
       width: 350px;
+      
+    }
+    &:last-child {
+      .contacts__list__item_data {
+        width: 320px;
+      }
     }
   }
 }
@@ -655,6 +663,9 @@ footer {
   }
   .contacts__list__item__logo img {
     height: max-content !important;
+  }
+  img {
+    height: 100% !important;
   }
 }
 @media all and (max-width: 931px) {
@@ -827,6 +838,11 @@ footer {
       height: 500px !important;
     }
   }
+  .thankYouPageFormBlock {
+    img {
+      height: 100% !important;
+    }
+  }
   .jobsBlock {
     .block_section_header {
       h3 {
@@ -866,6 +882,12 @@ footer {
     }
     img {
       height: 325px !important;
+    }
+    
+  }
+  .thankYouPageFormBlock {
+    img {
+      height: 100% !important;
     }
   }
 }

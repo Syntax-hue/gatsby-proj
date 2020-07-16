@@ -1,3 +1,10 @@
+.errorForm {
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+  transform: translate(-50%,100%);
+  color: red;
+}
 .submit_from {
   margin: 0px auto;
   max-width: 542px;
@@ -69,6 +76,7 @@
   bottom: 0px;
   transform: translateY(100%);
   overflow: hidden;
+  z-index: 10;
 }
 .select_list-open {
   display: block;

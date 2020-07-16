@@ -2,8 +2,9 @@ import React from 'react'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import { useStaticQuery, graphql } from 'gatsby'
-import '../styles/index.scss'
 import { Helmet } from 'react-helmet'
+import Img from 'gatsby-image'
+import '../styles/index.scss'
 
 export default function ThankYou() {
   const data = useStaticQuery(
@@ -14,6 +15,17 @@ export default function ThankYou() {
             node {
               publicURL
               name
+              childImageSharp {
+                fluid(maxWidth: 1980, quality: 100) {
+                  aspectRatio
+                  src
+                  srcSet
+                  sizes
+                  base64
+                  srcWebp
+                  srcSetWebp
+                }
+              }
             }
           }
         }
@@ -23,6 +35,10 @@ export default function ThankYou() {
   const allImages = {};
   data.allFile.edges.map(({ node }) => {
     allImages[node.name] = node.publicURL
+  })
+  const allImagesFluid = {};
+  data.allFile.edges.map(({ node }) => {
+    allImagesFluid[node.name] = node.childImageSharp && node.childImageSharp.fluid
   })
 
   return (
@@ -72,7 +88,7 @@ export default function ThankYou() {
             </div> 
           </div>
         </div>
-        <img className="fonImg" src={allImages['fon1-1']} />
+        <Img className="fonImg" fluid={allImagesFluid['fon1-1']} />
       </section>
       <Footer className="thankYouPageFooter"/>
     </div>

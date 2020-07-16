@@ -45,10 +45,10 @@ export default function Form() {
       name: nameField.current.value,
       prenume: prenameField.current.value,
       telefon: telefonField.current.value,
-      tip_pasaport: viewFon.current.innerText === 'Tip pașaport' ? 
+      tip_pasaport: viewFon.current.innerText === 'Pasaport' ? 
         'none' : viewFon.current.innerText
     }
-    await fetch(process.env.GATSBY_SITE_STRAPI+'/forms', {
+    await fetch(process.env.GATSBY_SITE_STRAPI+'/contacts', {
       method: "POST",
       headers: {
         'Content-Type': 'application/json'
@@ -63,7 +63,7 @@ export default function Form() {
     navigate('/thankYou');
   }
   return (
-    <form name="contact" data-netlify="true" netlify className="submit_from" onSubmit={handleSubmit}>
+    <form name="contact" data-netlify="true" className="submit_from" onSubmit={handleSubmit}>
       <h3>
         COMPLETEAZĂ FORMULARUL
       </h3>
@@ -82,7 +82,10 @@ export default function Form() {
              className="selectWrap_viewBlock" 
              onClick={handleOpenMenu}
         >
-          Tip pașaport
+          Pasaport
+          {/*<div className="errorForm">
+            test
+          </div>*/}
         </div>
         <select className="select_list"
                 ref={selectElem}
@@ -90,8 +93,8 @@ export default function Form() {
                 onChange={handleClickSelect}
                 size={2}
         >
-          <option>Moldova</option>
-          <option>România</option>
+          <option>Pasaport Roman</option>
+          <option>Pasaport Bulgar</option>
         </select>
       </div>
       <div className="submit_from__button">
