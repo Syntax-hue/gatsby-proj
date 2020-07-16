@@ -78,6 +78,17 @@ a {
 .f-al-center {
   align-items: center;
 }
+.fon2 {
+  display: none;
+}
+@media all and (max-width: 500px) {
+  .fon2 {
+    display: block;
+  }
+  .fon2-1 {
+    display: none;
+  }
+}
 .headerLineTop {
   position: relative;
   display: flex;

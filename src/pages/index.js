@@ -131,11 +131,8 @@ const IndexPage = () => {
       <section className="angajeaza">
         <div className="continer angajeaza_info">
           <div style={{width: '100%'}}>
-            {(globalThis.window ? globalThis.window.innerWidth < 500 ? true : false : true) ? 
-            <Img className="fonImg" fluid={allImagesFluid['fon2']} />
-            :
-            <Img className="fonImg" fluid={allImagesFluid['fon2-1']} />
-            }
+            <Img className="fonImg fon2" fluid={allImagesFluid['fon2']} />
+            <Img className="fonImg fon2-1" fluid={allImagesFluid['fon2-1']} />
           </div>
           <h3>
             Angajează-te în Germania
