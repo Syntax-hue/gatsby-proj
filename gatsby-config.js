@@ -8,6 +8,7 @@ require('dotenv').config({
 })
 
 console.log('strapi', process.env.GATSBY_SITE_STRAPI)
+console.log('no https', process.env.GATSBY_SITE_STRAPI_LOAD_DATA_NO_HTTPS);
 module.exports = {
   siteMetadata: {
     siteUrl: process.env.GATSBY_SITE_URL
@@ -16,7 +17,7 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: process.env.GATSBY_SITE_STRAPI,
+        apiURL: process.env.GATSBY_SITE_STRAPI_LOAD_DATA_NO_HTTPS,
         queryLimit: 1000, // Default to 100
         //contentTypes: [`Jobs`],
         singleTypes: [`jobs`],
