@@ -362,22 +362,24 @@ a {
   }
   .jobsBlock_list {
     //position: relative;
+    .jobsBlock_list__item:nth-child(2n) {
+      justify-content: space-between;
+      .jobsBlock_list__item__info {
+        order: -1;
+        margin-left: 15px;
+      }
+    }
     &__item {
       display: flex;
       width: 100%;
       box-shadow: 0 7px 13px rgba(0, 0, 0, 0.08);
       background-color: #ffffff;
+      + .jobsBlock_list__item {
+        margin-top: 40px;
+      }
       .jobsBlock_list__item_img {
         max-width: 350px;
         width: 100%;
-      }
-      + .jobsBlock_list__item {
-        margin-top: 40px;
-        justify-content: space-between;
-        .jobsBlock_list__item__info {
-          order: -1;
-          margin-left: 15px;
-        }
       }
       .jobsBlock_list__item__info {
         margin-left: 28px;

@@ -72,7 +72,7 @@ export default function Form() {
         <input ref={prenameField} placeholder="Prenume" required/>
       </div>
       <div>
-        <input ref={telefonField} placeholder="Telefon de contact" required/>
+        <input ref={telefonField} type="number" placeholder="Telefon de contact" required/>
       </div>
       <div
            ref={selectWrapElem} 
