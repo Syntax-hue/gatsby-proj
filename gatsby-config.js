@@ -19,8 +19,8 @@ module.exports = {
       options: {
         apiURL: process.env.GATSBY_SITE_STRAPI_LOAD_DATA_NO_HTTPS,
         queryLimit: 1000, // Default to 100
-        //contentTypes: [`Jobs`],
-        singleTypes: [`jobs`],
+        contentTypes: ['jobs'],
+        singleTypes: ['jobs'],
         //If using single types place them in this array.
         /*singleTypes: [`home-page`, `contact`],
         // Possibility to login with a strapi user, when content types are not publically available (optional).
