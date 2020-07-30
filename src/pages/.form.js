@@ -82,20 +82,18 @@ export default function Form() {
              className="selectWrap_viewBlock" 
              onClick={handleOpenMenu}
         >
-          Pasaport
-          {/*<div className="errorForm">
-            test
-          </div>*/}
+          Pasaport Roman
         </div>
-        <select className="select_list"
-                ref={selectElem}
-                onFocus={handleCloseOption}
-                onChange={handleClickSelect}
-                size={2}
+        <div className="select_list"
+             ref={selectElem}
+             onFocus={handleCloseOption}
+             onClick={handleClickSelect}
+             tabIndex={0}
+             size={2}
         >
           <option>Pasaport Roman</option>
           <option>Pasaport Bulgar</option>
-        </select>
+        </div>
       </div>
       <div className="submit_from__button">
         <button className="orange_button">

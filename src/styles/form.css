@@ -76,6 +76,8 @@ input[type=number] {
 }
 .selectWrap {
   position: relative;
+  webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color:  transparent;
 }
 .select_list {
   position: absolute;
@@ -85,16 +87,22 @@ input[type=number] {
   bottom: 0px;
   transform: translateY(100%);
   overflow: hidden;
+  border: 0.5px #767676 solid;
   z-index: 10;
 }
 .select_list-open {
   display: block;
 }
 .select_list option {
-  height: 30px;
+  height: 35px;
   display: flex;
   align-items: center;
   padding-left: 15px;
+  background-color: white;
+}
+.select_list option:hover {
+  background-color: #E95420;
+  color: white;
 }
 .select_list-open option::selection {
   background: transparent;
@@ -117,6 +125,11 @@ input[type=number] {
   height: 100%;
   background-color: white;
   z-index: 9;
+  webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color:  transparent;
+}
+.selectWrap_viewBlock::selection {
+  background: transparent;
 }
 .selectWrap::after,.selectWrap::before {
   position: absolute;
@@ -184,7 +197,7 @@ input[type=number] {
     font-size: 14px;
     height: 40px;
   }
-  .submit_from input,.submit_from .selectWrap {
+  .submit_from input,.submit_from .selectWrap, .selectWrap_viewBlock {
     font-size: 12px;
     height: 40px;
   }
@@ -218,7 +231,7 @@ input[type=number] {
     font-size: 9px;
     height: 33px;
   }
-  .submit_from input,.submit_from .selectWrap {
+  .submit_from input,.submit_from .selectWrap, .selectWrap_viewBlock {
     font-size: 9px;
     height: 33px;
   }
